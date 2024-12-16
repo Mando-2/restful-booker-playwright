@@ -20,12 +20,20 @@ namespace restful_booker_playwright.Tests.Booking
     {
         private IAPIRequestContext Request;
         private int BookingId;
-        private string Token;
 
         [SetUp]
         public async Task SetUpAPITesting()
         {
             await CreateAPIRequestContext();
+        }
+
+        [TearDown]
+        public async Task TearDownAPITesting()
+        {
+            if (Request != null)
+            {
+                await Request.DisposeAsync();
+            }
         }
 
         private async Task CreateAPIRequestContext()
@@ -38,15 +46,6 @@ namespace restful_booker_playwright.Tests.Booking
                 // All requests we send go to this API endpoint.
                 BaseURL = "http://localhost:3001",
             });
-        }
-
-        [TearDown]
-        public async Task TearDownAPITesting()
-        {
-            if (Request != null)
-            {
-                await Request.DisposeAsync();
-            }
         }
 
         [Test]
@@ -131,7 +130,7 @@ namespace restful_booker_playwright.Tests.Booking
 
             #endregion
 
-            bookings.Should().NotContain(bookingid);
+            bookings.Should().NotContain(bookingid, "this is deliberate as the site is a demo site designed for testers to test api's for existing bugs.  Yay we fond one!");
 
         }
 
