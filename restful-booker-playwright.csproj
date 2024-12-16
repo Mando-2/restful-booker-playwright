@@ -9,7 +9,6 @@
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
     <Copyright>Copyright (C) 2024 James David Grandfield</Copyright>
-    <PackageLicenseFile>GPL-3.0 license</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -34,13 +33,6 @@
     <Using Include="NUnit.Framework" />
     <Using Include="System.Text.RegularExpressions" />
     <Using Include="System.Threading.Tasks" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="GPL-3.0 license">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
   </ItemGroup>
 
 </Project>
