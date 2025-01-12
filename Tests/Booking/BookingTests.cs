@@ -93,7 +93,7 @@ namespace restful_booker_playwright.Tests.Booking
             // reminder that this test will fail because because there is 
             // an intentional bug in the API that prevents the deletion of bookings
             // this is deliberate as the site is a demo site designed for testers to
-            // test api's for existing bugs.  Yay we fond one!
+            // test api's for existing bugs.  We found one!
 
             //Arrange
             #region Get Auth Token            
